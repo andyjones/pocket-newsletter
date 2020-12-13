@@ -1,5 +1,8 @@
 pockyt
 pocket
 jinja2
+click
+algoliasearch
+requests
 
 black
