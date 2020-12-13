@@ -20,7 +20,13 @@ Andy
 ## News / General
 
 {% for article in issue.articles %}
-### [{{ article.resolved_title }}]({{ article.resolved_url }}){% if article.estimated_reading_time %} {{ "{{" }}< small class="muted" >{{ "}}" }}({{ article.estimated_reading_time }} min read){{ "{{" }}< /small >{{ "}}" }}{% endif %}
+### [{{ article.resolved_title }}]({{ article.resolved_url }})
+
+{{ "{{" }}< small class="muted" >{{ "}}" }}
+{{ article.domain }}
+{% if article.hn_url %}&middot; <a href="{{ article.hn_url }}">{{ article.hn_comments }} comments</a>{% endif %}
+{% if article.estimated_reading_time %}&middot; {{ article.estimated_reading_time }} min read{% endif %}
+{{ "{{" }}< /small >{{ "}}" }}
 
 {{ article.excerpt }}
 
