@@ -1,0 +1,39 @@
+---
+title: "{{ issue.title }}: #{{ issue.number }}"
+date: {{ issue.date }}
+---
+
+# {{ issue.title }}: #{{ issue.number }}
+
+## {{ issue.subtitle }}
+
+issue #{{ issue.number }} for {{ issue.human_date }}
+
+Hi everyone,
+
+Here are some of the links I found interesting this week. It is Re:Invent but I haven't seen many AWS announcements. The week has been dominated by [Timnit Gebru's resignation from Google](https://www.theverge.com/2020/12/5/22155985/paper-timnit-gebru-fired-google-large-language-models-search-ai). I'm surprised by the number of strong opinions that condemn one side or the other.
+
+Thanks!
+
+Andy
+
+## News / General
+
+{% for article in issue.articles %}
+### [{{ article.resolved_title }}]({{ article.resolved_url }}){% if article.estimated_reading_time %} {{ "{{" }}< small class="muted" >{{ "}}" }}({{ article.estimated_reading_time }} min read){{ "{{" }}< /small >{{ "}}" }}{% endif %}
+
+{{ article.excerpt }}
+
+{% endfor %}
+
+## Fun
+
+## Tools
+
+## Guides and Tutorials
+
+## Opinions
+
+## Time machine: [Choose Boring Technology (2015)](https://mcfunley.com/choose-boring-technology)
+
+{{ "{{" }}< small class="muted" >{{ "}}" }}Time spent: 2 hours{{ "{{" }}< /small >{{ "}}" }}
